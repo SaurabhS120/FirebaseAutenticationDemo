@@ -14,6 +14,7 @@
         android:theme="@style/Theme.FirebaseAutenticationDemo"
         tools:targetApi="31">
         <activity
+            android:label="Logged in"
             android:name=".LoggedInActivity"
             android:exported="false" />
         <activity
@@ -26,9 +27,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:noHistory="true" />
+            android:label="Login"
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:label="Create Account"
+            android:name=".CreateAccountActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
