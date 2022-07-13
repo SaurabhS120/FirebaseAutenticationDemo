@@ -27,4 +27,7 @@ class FireBaseViewModel : ViewModel(){
     fun signInWithEmailAndPassword(email:String,password: String): Task<AuthResult> {
         return mAuth.signInWithEmailAndPassword(email,password)
     }
+    fun logout(){
+        mAuth.signOut()
+    }
 }
