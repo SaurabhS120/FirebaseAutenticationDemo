@@ -48,5 +48,12 @@
             android:layout_height="wrap_content"
             android:text="@string/crrete_a_new_account"
             style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+        <Button
+            android:id="@+id/createAccountWithOtherMethodsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_account_with_other_methods"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
     </LinearLayout>
 </layout>
