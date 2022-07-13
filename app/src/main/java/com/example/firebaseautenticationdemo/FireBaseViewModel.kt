@@ -1,16 +1,20 @@
 package com.example.firebaseautenticationdemo
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
+
 
 class FireBaseViewModel : ViewModel(){
     val TAG = "firebase"
-    lateinit var mAuth:FirebaseAuth
+    val mAuth:FirebaseAuth
+    val mFirebaseRemoteConfig:FirebaseRemoteConfig
     init {
         mAuth = FirebaseAuth.getInstance()
+        mFirebaseRemoteConfig = initRemoteConfig()
     }
     fun isLoggedIn(): Boolean {
         return mAuth.currentUser != null
@@ -29,5 +33,15 @@ class FireBaseViewModel : ViewModel(){
     }
     fun logout(){
         mAuth.signOut()
+    }
+
+    fun initRemoteConfig(): FirebaseRemoteConfig {
+        var mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
+        val configSettings = FirebaseRemoteConfigSettings.Builder()
+            .setMinimumFetchIntervalInSeconds(5)
+            .build()
+        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings)
+        mFirebaseRemoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
+        return mFirebaseRemoteConfig
     }
 }
