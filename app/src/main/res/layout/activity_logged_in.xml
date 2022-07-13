@@ -31,4 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/messageTextView"/>
+    <ImageView
+        android:id="@+id/greetImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="300sp"
+        android:src="@drawable/default_greet"/>
 </LinearLayout>

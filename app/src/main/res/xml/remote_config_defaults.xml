@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defaults>
   <entry>
+    <key>season</key>
+    <value>default</value>
+  </entry>
+  <entry>
     <key>msg</key>
-    <value>Its time to rock</value>
+    <value>Run</value>
   </entry>
 </defaults>

@@ -31,19 +31,22 @@ class LoggedInActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val updated = task.result
                     Log.d(TAG, "Config params updated: $updated")
-                    Toast.makeText(
-                        this, "Fetch and activate succeeded",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Utils.showToast(this,"Fetch and activate succeeded")
                 } else {
-                    Toast.makeText(
-                        this, "Fetch failed",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Utils.showToast(this,"Fetch failed")
                 }
 
                 binding.messageTextView.setText(firebaseViewModel.mFirebaseRemoteConfig.getString("msg"))
+                setSeason(firebaseViewModel.mFirebaseRemoteConfig.getString("season"))
             })
         binding.messageTextView.setText(firebaseViewModel.mFirebaseRemoteConfig.getString("msg"))
+    }
+    fun setSeason(seasonName:String){
+        Utils.showToast(this,"Season : $seasonName")
+        Seasons.values().forEach {
+            if (it.seasonName.equals(seasonName)){
+                binding.greetImageView.setImageResource(it.imageResId)
+            }
+        }
     }
 }
