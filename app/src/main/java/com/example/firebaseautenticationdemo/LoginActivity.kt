@@ -88,6 +88,8 @@ class LoginActivity : AppCompatActivity() {
                 .build(),
             AuthUI.IdpConfig.GoogleBuilder()
                 .build(),
+            AuthUI.IdpConfig.FacebookBuilder()
+                .build()
         )
         val signInIntent = AuthUI.getInstance()
             .createSignInIntentBuilder()

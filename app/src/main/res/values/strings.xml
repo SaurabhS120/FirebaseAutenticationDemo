@@ -6,5 +6,12 @@
     <string name="crrete_a_new_account">Crrete a new account</string>
     <string name="create_account">Create account</string>
     <string name="create_account_with_other_methods">Create account with other methods</string>
-    <string name="message">Message</string>
+    <string name="message">Message</string>q
+
+
+    <string name="facebook_app_id">442592687526133</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">bebb2acbeacd8e759a0923aff62c867a</string>
+    <string name="facebook_application_id">@string/facebook_app_id</string>
+
 </resources>
